@@ -1,0 +1,190 @@
+Practice Drill 1.
+
+1. mkdir -p hello/five/six/seven
+
+The mkdir -p hello/five/six/seven command is used to create a directory structure in terminal.
+
+mkdir: This is the command for creating directories
+-p: this indicates parent direcory
+
+Now, let's break down the path provided:
+
+hello: This is the top-level directory you want to create.
+five: This is a subdirectory of hello.
+six: This is a subdirectory of five.
+seven: This is a subdirectory of six.
+
+2. touch hello/five/six/c.txt
+
+touch: This command is used to create empty files. If the file already exists, it updates the access and modification it.
+
+five: This is the top-level directory.
+
+six: This is a subdirectory of five.rrr
+
+c.txt: This is the file you want to create within the six directory.
+
+3. touch hello/five/six/seven/error.log
+
+touch: This command is used to create empty files. If the file already exists, it updates the access and modification it.
+
+hello: This is the top-level directory.
+
+five: This is a subdirectory of hello.
+six: This is a subdirectory of five.
+seven: This is a subdirectory of six.
+error.log: This is the file you want to create within the seven directory.
+
+4.mkdir -p hello/one/two/three/four
+
+. mkdir:- ithis command is use to create dictory.
+
+. -p :- ensure parent direcotry
+
+hello: This is the top-level directory.
+
+one: This is a subdirectory of hello.
+two: This is a subdirectory of one.
+three: This is a subdirectory of two.
+four: This is a subdirectory of three.
+
+5. touch hello/one/a.txt
+
+touch hello/one/b.txt
+
+touch hello/one/two/d.txt
+
+touch hello/one/two/three/e.txt
+
+touch hello/one/two/three/four/access.log
+
+touch: This command is used to create empty files. If the file already exists, it updates the access and modification it.
+
+
+
+
+6 .Delete all the files having the .log extension
+
+    find . -type f -name  "*.log" -delete
+
+this command is used for finding and search the .log type of extension and after finding it will delete.
+
+7.Add the following content to a.txt
+
+->nano hello/one/a.txt
+
+nano will create an editor in which we can write in a.txt files.
+
+8.delete  the directory five
+-> rm -R five
+
+if direcory five is not empty them it is also deleted .
+
+9.Rename the one directory to uno.
+ mv one uno
+
+it rename the old name one into uno.
+
+10.Move a.txt to the two directory
+ mv hello/one/a.txt hello/one/two/
+
+this command will move a.txt file to directory two
+ 
+ -----------------------------------------------------------------------------------------------
+ practice Drill 2
+ 
+ 1.Download the contents of "Harry Potter and the Goblet of fire" using the command line from here
+ . wget url 
+ this command is used to download using the link.
+ 
+ 2.Print the first three lines in the book
+ head -n3  Harry\ Potter\ and\ the\ Goblet\ of\ Fire.txt.
+ head is the starting part of the book and -n3 is use to print lines.
+ 
+ 
+ 3.Print the last 10 lines in the book
+ . tail -n10 Harry\ Potter\ and\ the\ Goblet\ of\ Fire.txt 
+ tail command is use to print from end of the book and -n10 is used to print the line.
+ 
+ 4. How many times do the following words occur in the book?
+     Harry
+     Ron
+     Hermione
+     Dumbledore
+.grep -o -i Harry  Harry\ Potter\ and\ the\ Goblet\ of\ Fire.txt | wc -l
+
+explanation :
+            
+The command grep -o -i 'Harry' "Harry Potter and the Goblet of Fire.txt" | wc -l is used to count the number of occurrences of the word "Harry" in a case-insensitive manner in the file "Harry Potter and the Goblet of Fire.txt". Let's break down the components of this command:
+
+grep -o -i 'Harry' "Harry Potter and the Goblet of Fire.txt": This command searches for the word "Harry" in the specified file. The options -o tell grep to output only the matched parts of the lines (in this case, the word "Harry"), and -i makes the search case-insensitive.
+
+|: This is the pipe operator, which is used to send the output of one command as input to another command.
+
+wc -l: This command counts the number of lines in the output. Since we're using -o with grep to output only the matched words, each line in the output corresponds to an occurrence of the word "Harry."
+
+5. Print lines from 100 through 200 in the book
+sed -n '100,200p' "Harry Potter and the Goblet of Fire.txt"
+ explaination
+            sed: Stream Editor for filtering and transforming text.
+           -n: Suppress automatic printing of pattern space.
+           '100,200p': Specifies a range from line 100 to line 200 and prints those lines.
+           "Harry Potter and the Goblet of Fire.txt": The input file. 
+         
+6. How many unique words are present in the book?
+tr -cs '[:alnum:]' '\n' < "Harry Potter and the Goblet of Fire.txt" | sort -u | wc -l
+ explanations
+ tr -cs '[:alnum:]' '\n': Replaces non-alphanumeric characters with newlines, breaking the text into words.
+sort -u: Sorts the words alphabetically and removes duplicates.
+wc -l: Counts the number of lines in the output, which corresponds to the number of unique words.
+This command will output the count of unique words in the "Harry Potter and the Goblet of Fire.txt" file.
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
